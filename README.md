@@ -1,1 +1,1 @@
-# Superstore
+# Superstore Data Analysis project
