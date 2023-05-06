@@ -5,3 +5,10 @@ Built a visualization to show the data of sales & proft by Category.
 Built a visualization to show the data of sales & profit by Segment.
 And visualize to show the filter data of profit by top 10 Customer.
 Another visualize to show the filter data of sales by top Product.
+# Netflix movies & tv shows data analysis project
+netflix movies & tv shows dataset from Kaggle. And loaded the csv.file data on power BI for analyzing the data. For this project I used DAX QUIREY (exp. COUNTX FUNCTION for used find of total number of movies & total number of shows).
+I analyze number of movies & tv shows released per year.
+Analyze ratings of movies & tv shows on Netflix.
+Top 10 viewed genres.
+Top 10 Actors & Directors in Netflix movies & tv shows.
+Top 5 Movies & Shows of Netflix.
