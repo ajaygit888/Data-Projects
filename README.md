@@ -1,39 +1,39 @@
 # Sales Insights Project - Data Analysis using SQL
 In this project I analyze sales Insights data from sql database. And this project I used some sql function for analyze the sales Insights data. And some looks like this...(AGGRIGATIVE FUNCTION, WINDOW FUNCTION, JOINS CLAUSE, WHERE CLAUSE, GROUP BY, ORDER BY, LIMIT).  
 
-  # Find out total_revenue in table.
+  # Analyze total_revenue in a table.
 select sum(t.sales_amount) as total_revenue from transactions as t where t.currency='inr\r' or t.currency= 'usd\r';
 
-  # Find out total sales_qty in table.
+  # Analyze total sales_qty in a table.
 select sum(sales_qty) as total_sales_qty from transactions;
 
-  # Find out total revenue each Markets name.
-select markets_name, sum(t.sales_amount) as revenue from transactions as t
+  # Analyze total revenue each Market code.
+select markets_code, sum(t.sales_amount) as revenue from transactions as t
  join markets as m on t.market_code=m.markets_code
- where t.currency='inr\r'or t.currency='usd\r' group by markets_name order by sum(t.sales_amount) desc;
+ where t.currency='inr\r'or t.currency='usd\r' group by markets_code order by sum(t.sales_amount) desc;
  
- # Find out total revenue each markets name by zone.
+ # Analyze total revenue each markets name by zone.
 select m.zone, m.markets_name, sum(t.sales_amount)'revenue',
  row_number() over (partition by m.zone order by sum(t.sales_amount) desc)'Num_zone' from transactions t
  join markets m on t.market_code=m.markets_code
  where t.currency='inr\r' or t.currency='usd\r' group by m.zone,m.markets_name;
 
-  # Find out total revenue each year.
+  # Analyze total revenue each year.
  select d.year, sum(t.sales_amount)as revenue from transactions as t
   join date as d on t.order_date=d.date
   where t.currency='inr\r'or t.currency='usd\r' group by d.year;
 
-  # Find out total revenue each Customer_type.
+  # Analyze total revenue each Customer_type.
 select customer_type, sum(t.sales_amount) as revenue from transactions as t
  join customers as c on t.customer_code=c.customer_code
  where t.currency='inr\r'or t.currency='usd\r' group by customer_type;
 
-  # Find out total revenue each Product_type.
+  # Analyze total revenue each Product_type.
 select product_type, sum(t.sales_amount)as revenue from transactions as t
  join products as p on t.product_code=p.product_code
  where t.currency='inr\r'or t.currency='usd\r' group by product_type;
 
-  # Find out total revenue by top 15 customer's. 
+  # Analyze total revenue by top 15 customer's. 
 select custmer_name, sum(t.sales_amount)as revenue from transactions as t
  join customers as c on t.customer_code=c.customer_code
  where t.currency='inr\r'or t.currency='usd\r'
