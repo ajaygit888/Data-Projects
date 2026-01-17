@@ -1,5 +1,5 @@
-# E-COMMERCE SALES ANALYSIS PROJECT 
-I Analyzed sales data from an e-commerce business to gain insights into customer behavior, identify top-selling products, evaluate sales 
+# E-COMMERCE SALES ANALYTICS PROJECT 
+I Analyzed sales data from an e-commerce walmart business to gain insights & identify sales trends, quaterly patterns, top-preforming products, evaluate categorical sales 
  performance, and make data-driven recommendations.
  
 # SALES INSIGHTS PROJECT - DATA ANALYSIS USING SQL
